@@ -7,21 +7,21 @@ public class Main {
         ArrayList<Integer> list3=getSuperBprimenubers(1000,100000);
         int count4=getprimesum(100,10000);
         boolean wynik=issumofsuperbaprime(100,10000);
-        //for (int i:
-             //list1) {
-         //   System.out.println(i);
-       // }
-       // System.out.println(list1.size());
-      // for (int i:
-           //     list2) {
-         //  System.out.println(i);
-       // }
-        //System.out.println(list2.size());
+        for (int i:
+             list1) {
+           System.out.println(i);
+       }
+        System.out.println(list1.size());
+      for (int i:
+               list2) {
+          System.out.println(i);
+        }
+        System.out.println(list2.size());
         for (int i:
                 list3) {
             System.out.println(i);
         }
-       System.out.println(list3.size());
+        System.out.println(list3.size());
         System.out.println(count4);
         System.out.println(wynik);
 
@@ -82,24 +82,10 @@ public class Main {
         public static boolean issumofsuperbaprime(int min, int max){
             boolean wynik;
             int count=0;
-            for(int i=min;i<max;i++){
-                int sum=0;
-                String str=Integer.toString(i);
-                char[] strnumbers=str.toCharArray();
-                for(char c:strnumbers) {
-                    int num = c - '0';
-                    sum += num;
-                }
-                String binstr=Integer.toBinaryString(i);
-                char[] binnumbers=binstr.toCharArray();
-                int sum1=0;
-                for(char c:binnumbers){
-                    int bin=c-'0';
-                    sum1+=bin;
-                }
-                if(isPrime(i)&&isPrime(sum)&&isPrime(sum1)){
-                    count+=i;
-                }
+          ArrayList<Integer> numbers=getSuperBprimenubers(min,max);
+            for (int i:numbers
+                 ) {
+                count+=i;
             }
             wynik=isPrime(count);
             return wynik;
