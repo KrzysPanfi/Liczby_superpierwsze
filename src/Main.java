@@ -1,19 +1,34 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        int count = getSuperBprimenubers(2,1000);
-        int count2=getSuperBprimenubers(100,10000);
-        int count3=getSuperBprimenubers(1000,100000);
+        ArrayList<Integer> list1=getSuperBprimenubers(2,1000);
+        ArrayList<Integer> list2=getSuperBprimenubers(100,10000);
+        ArrayList<Integer> list3=getSuperBprimenubers(1000,100000);
         int count4=getprimesum(100,10000);
         boolean wynik=issumofsuperbaprime(100,10000);
-        System.out.println(count);
-        System.out.println(count2);
-        System.out.println(count3);
+        //for (int i:
+             //list1) {
+         //   System.out.println(i);
+       // }
+       // System.out.println(list1.size());
+      // for (int i:
+           //     list2) {
+         //  System.out.println(i);
+       // }
+        //System.out.println(list2.size());
+        for (int i:
+                list3) {
+            System.out.println(i);
+        }
+       System.out.println(list3.size());
         System.out.println(count4);
         System.out.println(wynik);
 
     }
 
-    public static int getSuperBprimenubers(int min,int max) {
+    public static ArrayList<Integer> getSuperBprimenubers(int min, int max) {
+        ArrayList<Integer> lista=new ArrayList<>();
         int count=0;
         for(int i=min;i<max;i++){
             int sum=0;
@@ -31,10 +46,10 @@ public class Main {
                sum1+=bin;
            }
            if(isPrime(i)&&isPrime(sum)&&isPrime(sum1)){
-               count++;
+               lista.add(i);
            }
         }
-        return count;
+        return lista;
     }
     public static int getprimesum(int min,int max) {
         int count=0;
